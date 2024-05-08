@@ -1,6 +1,6 @@
 import java.util.*;
 public class task1CodSoft {
-    public static int points=0;
+    public static int points;
     public static void numCheck(int generatedNum){
         Scanner sc=new Scanner(System.in);
         int i=5; //Number of choices
@@ -25,14 +25,22 @@ public class task1CodSoft {
             System.out.println((i-1)+" attempts left!\n");
             i--;
         }
+        System.out.println("The correct number was "+generatedNum);
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         Random r=new Random();
-        
+        System.out.println("The number range for this game is 0 to 100.\nDo you want to change the upper limit?(Y/N)");
+        char choice=sc.next().charAt(0);
+        int x=100;
+        if(choice=='Y'){
+            System.out.println("Enter the upper limit:");
+            x=sc.nextInt();
+        }
+
         char play='Y';
         while(play=='Y'){
-            int generatedNum=r.nextInt(100);
+            int generatedNum=r.nextInt(x);
             numCheck(generatedNum);
             System.out.println("-----------------");
             System.out.println("Total points - "+points+"\n");
