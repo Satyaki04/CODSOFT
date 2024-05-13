@@ -19,6 +19,7 @@ class Questions{
     void startQuiz(){
         Scanner sc=new Scanner(System.in);
         for(int i=0; i<Qs.length; i++){
+            System.out.println("--------------------------------");
             System.out.println((i+1)+". "+Qs[i]);
             System.out.println(options[i]);
             checkAns(ans[i], sc); 
